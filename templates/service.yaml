@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "capstone-chart-openvas-data-objects.fullname" . }}
+  labels:
+    {{- include "capstone-chart-openvas-data-objects.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "capstone-chart-openvas-data-objects.selectorLabels" . | nindent 4 }}
