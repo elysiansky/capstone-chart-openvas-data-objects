@@ -8,7 +8,7 @@ data-objects:
   replicas: 2
   image:
     repository: elysiansky/capstone-openvas-data-objects
-    tag: 68fda46-amd64
+    tag: d4c90c6-amd64
   service:
     type: ClusterIP
   resources:
